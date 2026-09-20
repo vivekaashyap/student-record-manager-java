@@ -6,6 +6,7 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         StudentManager manager = new StudentManager();
+        manager.loadFromFile();
 
         while (true) {
 
@@ -47,7 +48,7 @@ public class Main {
                             new Student(id, name, age, course, cgpa);
 
                     manager.addStudent(student);
-
+                    manager.saveToFile();
                     break;
 
                 case 2:
@@ -100,7 +101,7 @@ public class Main {
                             newCourse,
                             newCgpa
                     );
-
+                    manager.saveToFile();
                     break;
 
                 case 5:
@@ -109,7 +110,7 @@ public class Main {
                     int deleteId = sc.nextInt();
 
                     manager.deleteStudent(deleteId);
-
+                    manager.saveToFile();
                     break;
 
                 case 6:
